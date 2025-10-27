@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Content Manager</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body>
-    <script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPSPD CMS</title>
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
+</head>
+<body>
+  <h1>Content Manager</h1>
+
+  <button id="login-btn">Login</button>
+
+  <script>
+    const identity = window.netlifyIdentity;
+
+    // Initialize Identity Widget
+    identity.init();
+
+    // Open login modal
+    document.getElementById("login-btn").addEventListener("click", () => {
+      identity.open("login");
+    });
+
+    // Handle email confirmation token from URL
+    const hash = window.location.hash;
+    if (hash.includes("confirmation_token")) {
+      const token = new URLSearchParams(hash.slice(1)).get("confirmation_token");
+
+      fetch("/.netlify/identity/confirm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token })
+      })
+      .then(res => res.json())
+      .then(() => {
+        alert("Email confirmed! Please log in.");
+        window.location.hash = ""; // clear token from URL
+      })
+      .catch(err => console.error("Confirmation error:", err));
+    }
+
+    // Redirect after successful login
+    identity.on("login", user => {
+      console.log("Logged in as:", user.email);
+      window.location.href = "/admin/"; // keep user on CMS page
+    });
+
+    // Optional: logout button
+    identity.on("logout", () => {
+      window.location.href = "/";
+    });
+  </script>
+</body>
 </html>
