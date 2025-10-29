@@ -17,21 +17,79 @@
       rel="stylesheet"
     />
 
+    <meta
+      name="description"
+      content="Crown Point Consulting provides sterile processing audits, compliance consulting, and operational excellence for healthcare facilities."
+    />
+    <meta
+      name="keywords"
+      content="sterile processing, auditing, consulting, crown point consulting, healthcare compliance"
+    />
+    <meta name="author" content="Crown Point Consulting" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://crownpointconsult.com/favicon/favicon.svg"
+    />
+    <link
+      rel="alternate icon"
+      href="https://crownpointconsult.com/favicon/favicon.png"
+    />
+
+    <!-- Open Graph / Social Preview -->
+    <meta
+      property="og:title"
+      content="Crown Point Consulting – Sterile Processing Auditing Excellence"
+    />
+    <meta
+      property="og:description"
+      content="Professional sterile processing audits and compliance services. Elevate your facility’s standards with Crown Point Consulting."
+    />
+    <meta
+      property="og:image"
+      content="https://crownpointconsult.com/favicon/favicon.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Crown Point Consulting logo" />
+    <meta property="og:url" content="https://crownpointconsult.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Crown Point Consulting" />
+    <meta name="author" content="Ayman Ougri" />
+    <meta name="developer" content="https://waougri.github.io/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Crown Point Consulting – Sterile Processing Auditing Excellence"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional sterile processing audits and compliance services."
+    />
+    <meta
+      name="twitter:image"
+      content="https://crownpointconsult.com/favicon/favicon.png"
+    />
+
     <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
-      href="favicon/favicon-96x96.png"
+      href="/favicon/favicon-96x96.png"
       sizes="96x96"
     />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="favicon/apple-touch-icon.png"
+      href="/favicon/apple-touch-icon.png"
     />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- JavaScript Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -344,11 +402,17 @@
         <div class="swiper-wrapper">
           <!-- Slide 1: Main Hero -->
           <div class="swiper-slide relative">
-            <img
-              src="assets/s1.jpg"
-              alt="Sterile Processing Excellence"
-              class="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcset="optimized/s1.webp" type="image/webp" />
+              <img
+                src="assets/s1.jpg"
+                alt="Sterile Processing Excellence"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+
             <div
               class="absolute inset-0 bg-black/40 flex items-center justify-center"
             >
@@ -378,11 +442,17 @@
 
           <!-- Slide 2: Auditing -->
           <div class="swiper-slide relative">
-            <img
-              src="assets/consulting.jpeg"
-              alt="Cleanroom Operations"
-              class="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcset="optimized/consulting.webp" type="image/webp" />
+              <img
+                src="assets/consulting.jpg"
+                alt="Sterile Processing Excellence"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+
             <div
               class="absolute inset-0 bg-black/40 flex items-center justify-center"
             >
@@ -401,11 +471,17 @@
 
           <!-- Slide 3: Consulting -->
           <div class="swiper-slide relative">
-            <img
-              src="assets/cleanroom.jpg"
-              alt="Consulting Excellence"
-              class="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcset="optimized/cleanroom.webp" type="image/webp" />
+              <img
+                src="assets/cleanroom.jpg"
+                alt="Sterile Processing Excellence"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+
             <div
               class="absolute inset-0 bg-black/40 flex items-center justify-center"
             >
@@ -531,30 +607,29 @@
 
           <!-- CEO Image -->
           <div class="flex justify-center order-1 md:order-2">
-<div class="relative group inline-block">
-  <img
-    src="assets/ceo.jpg"
-    alt="Malinda Elammari"
-    class="rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
-  />
+            <div class="relative group inline-block">
+              <img
+                src="assets/ceo.jpg"
+                alt="Malinda Elammari"
+                class="rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105"
+              />
 
-  <!-- Crown Icon -->
-  <div
-    class="absolute inset-0 flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-12 h-12 text-yellow-400 drop-shadow-md mt-3 mr-3"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M5 16l2-7 5 4 5-4 2 7H5zm0 2h14v2H5v-2zM12 4a2 2 0 110 4 2 2 0 010-4z"
-      />
-    </svg>
-  </div>
-</div>
-
+              <!-- Crown Icon -->
+              <div
+                class="absolute inset-0 flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-12 h-12 text-yellow-400 drop-shadow-md mt-3 mr-3"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M5 16l2-7 5 4 5-4 2 7H5zm0 2h14v2H5v-2zM12 4a2 2 0 110 4 2 2 0 010-4z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -916,8 +991,7 @@
       }
 
       function getFallbackNews() {
-        return [
-        ];
+        return [];
       }
     </script>
     <script defer>
