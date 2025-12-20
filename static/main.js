@@ -54,7 +54,7 @@ async function loadNews() {
 }
 
 /**
- * Parses markdown post with frontmatter
+ * Parses Markdown post with frontmatter
  * @param {string} content - Markdown content
  * @param {string} filename - File name
  * @returns {Object|null} Parsed post object

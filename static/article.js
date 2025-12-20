@@ -66,11 +66,11 @@ window.articleData = function () {
         const contentResponse = await fetch(articleFile.download_url);
         const content = await contentResponse.text();
 
-        // Parse the markdown file
+        // Parse the Markdown file
         this.article = this.parseMarkdownPost(content, articleFile.name);
 
         if (this.article) {
-          // Render markdown to HTML
+          // Render Markdown to HTML
           if (typeof marked !== "undefined") {
             this.renderedContent = marked.parse(this.article.body);
           } else {

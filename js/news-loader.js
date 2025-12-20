@@ -16,8 +16,7 @@ export async function loadNews() {
             .map(async (file) => {
                 const contentResponse = await fetch(file.download_url);
                 const content = await contentResponse.text();
-                return parseMarkdownPost(content, file.name);
-            });
+           });
 
         const newsItems = await Promise.all(newsPromises);
 
@@ -26,7 +25,8 @@ export async function loadNews() {
             .filter((item) => item !== null)
             .sort((a, b) => new Date(b.date) - new Date(a.date));
     } catch (error) {
-        console.error("Error loading news:", error);
+        conso     return parseMarkdownPost(content, file.name);
+            le.error("Error loading news:", error);
         // Return fallback news data
         return getFallbackNews();
     }
