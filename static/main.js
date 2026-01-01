@@ -27,7 +27,7 @@ async function loadNews() {
       throw new Error("Invalid response from GitHub API");
     }
 
-    // Filter and fetch markdown files
+    // Filter and fetch Markdown files
     const newsPromises = files
       .filter((file) => file.name.endsWith(".md"))
       .map(async (file) => {
@@ -79,11 +79,11 @@ function parseMarkdownPost(content, filename) {
       const colonIndex = line.indexOf(":");
       if (colonIndex > -1) {
         const key = line.substring(0, colonIndex).trim();
-        const value = line
-          .substring(colonIndex + 1)
-          .trim()
-          .replace(/^["']|["']$/g, ""); // Remove quotes
-        data[key] = value;
+        // Remove quotes
+        data[key] = line
+            .substring(colonIndex + 1)
+            .trim()
+            .replace(/^["']|["']$/g, "");
       }
     });
 
@@ -126,8 +126,7 @@ function newsData() {
 
     async init() {
       try {
-        const newsItems = await loadNews();
-        this.news = newsItems;
+        this.news = await loadNews();
       } catch (err) {
         console.error("News loading error:", err);
         this.news = [];
