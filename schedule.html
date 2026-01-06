@@ -357,18 +357,6 @@
 </div>
 
 <script>
-    // Google Places Autocomplete
-    function initAutocomplete() {
-        const input = document.getElementById('address-input');
-        if (input && typeof google !== 'undefined') {
-            const options = {
-                types: ['address'],
-                componentRestrictions: { country: "us" }, // Limits to US
-            };
-            new google.maps.places.Autocomplete(input, options);
-        }
-    }
-    window.onload = initAutocomplete;
 
     // Toggle Logic for Hidden Fields
     function setupToggle(toggleId, contentId) {
