@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPD Facility Assessment</title>
+    <title>SPD Facility Assessment | Netlify</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&libraries=places"></script>
+
     <style>
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-
         .blob {
             position: fixed;
             border-radius: 50%;
@@ -26,32 +25,24 @@
             animation: move 7s infinite;
             opacity: 0.3;
         }
-
         @keyframes move {
-            0% { transform: translate(0px, 0px) scale(1); }
+            0%, 100% { transform: translate(0, 0) scale(1); }
             33% { transform: translate(30px, -50px) scale(1.1); }
             66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
         }
-
-        .input-focus {
-            transition: all 0.3s ease;
-        }
+        .input-focus { transition: all 0.3s ease; }
         .input-focus:focus {
             border-color: #a855f7;
             box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
             outline: none;
         }
-
         .gradient-btn {
             background: linear-gradient(to right, #a855f7, #ec4899, #a855f7);
             background-size: 200% auto;
             transition: 0.5s;
         }
-        .gradient-btn:hover {
-            background-position: right center;
-            transform: scale(1.03);
-        }
+        .gradient-btn:hover { background-position: right center; transform: scale(1.03); }
+        .pac-container { border-radius: 1rem; border: none; box-shadow: 0 10px 25px rgba(0,0,0,0.1); font-family: 'Inter', sans-serif; }
     </style>
 </head>
 <body class="bg-indigo-50 min-h-screen p-4 md:p-8 overflow-x-hidden">
@@ -63,10 +54,11 @@
 <div class="max-w-4xl mx-auto relative z-10">
     <header class="mb-10 text-center">
         <h1 class="text-5xl text-gray-900 mb-2">Facility Assessment</h1>
-        <p class="text-purple-600 font-medium tracking-wide uppercase text-sm">Sterile Processing Department Overview</p>
+        <p class="text-purple-600 font-medium tracking-wide uppercase text-sm">Sterile Processing Department Portal</p>
     </header>
 
-    <form class="glass-card rounded-3xl p-8 shadow-2xl space-y-12" netlify>
+    <form name="spd-assessment" method="POST" data-netlify="true" class="glass-card rounded-3xl p-8 shadow-2xl space-y-12">
+        <input type="hidden" name="form-name" value="spd-assessment" />
 
         <section>
             <div class="flex items-center mb-6 border-b-2 border-purple-200 pb-2">
@@ -76,28 +68,28 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="flex flex-col">
                     <label class="mb-2 text-sm font-semibold text-gray-600">Date</label>
-                    <input type="date" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                    <input type="date" name="assessment_date" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
                 </div>
                 <div class="flex flex-col">
                     <label class="mb-2 text-sm font-semibold text-gray-600">Facility Name</label>
-                    <input type="text" placeholder="General Hospital" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                    <input type="text" name="facility_name" placeholder="General Hospital" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3" required>
                 </div>
                 <div class="flex flex-col md:col-span-2">
                     <label class="mb-2 text-sm font-semibold text-gray-600">Facility Address</label>
-                    <input type="text" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                    <input id="facility-address" type="text" name="facility_address" placeholder="Start typing address..." class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
                 </div>
                 <div class="flex flex-col">
                     <label class="mb-2 text-sm font-semibold text-gray-600">System Affiliation</label>
-                    <input type="text" placeholder="System Name (or N/A)" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                    <input type="text" name="system_affiliation" placeholder="e.g. Mayo Clinic" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
                 </div>
                 <div class="flex flex-col">
                     <label class="mb-2 text-sm font-semibold text-gray-600">Trauma Level</label>
-                    <select class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3 bg-white">
-                        <option>Level I</option>
-                        <option>Level II</option>
-                        <option>Level III</option>
-                        <option>Level IV</option>
-                        <option>N/A</option>
+                    <select name="trauma_level" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3 bg-white">
+                        <option value="none">N/A</option>
+                        <option value="1">Level I</option>
+                        <option value="2">Level II</option>
+                        <option value="3">Level III</option>
+                        <option value="4">Level IV</option>
                     </select>
                 </div>
             </div>
@@ -109,130 +101,57 @@
                 <h2 class="text-2xl font-bold text-gray-800">Facility Contact</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Contact Name" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-                <input type="text" placeholder="Title" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-                <input type="tel" placeholder="Best Contact Number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-                <input type="email" placeholder="Email Address" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-            </div>
-        </section>
-
-        <section>
-            <div class="flex items-center mb-6 border-b-2 border-purple-200 pb-2">
-                <span class="text-2xl mr-3">📋</span>
-                <h2 class="text-2xl font-bold text-gray-800">Accreditation & Reporting</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <input type="text" placeholder="Accrediting Organization Name" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-                <div class="flex flex-col">
-                    <label class="mb-1 text-xs font-bold text-gray-400 uppercase px-2">Last Audit Date</label>
-                    <input type="date" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
-                </div>
-            </div>
-            <div class="mb-6">
-                <label class="block mb-4 text-sm font-semibold text-gray-600">Top 4 Audit Findings for SPD (if applicable):</label>
-                <div class="grid grid-cols-1 gap-3">
-                    <input type="text" placeholder="1." class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2 bg-white/50">
-                    <input type="text" placeholder="2." class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2 bg-white/50">
-                    <input type="text" placeholder="3." class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2 bg-white/50">
-                    <input type="text" placeholder="4." class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2 bg-white/50">
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <label class="mb-2 text-sm font-semibold text-gray-600">Who does the SPD report directly to?</label>
-                <input type="text" placeholder="Title/Department" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="text" name="contact_name" placeholder="Name" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3" required>
+                <input type="text" name="contact_title" placeholder="Title" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="tel" name="contact_phone" placeholder="Contact Number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="email" name="contact_email" placeholder="Email Address" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3" required>
             </div>
         </section>
 
         <section>
             <div class="flex items-center mb-6 border-b-2 border-purple-200 pb-2">
                 <span class="text-2xl mr-3">⚙️</span>
-                <h2 class="text-2xl font-bold text-gray-800">Operations & Staffing</h2>
+                <h2 class="text-2xl font-bold text-gray-800">SPD Operations</h2>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-400 mb-1">FT (Inc. FMLA)</label>
-                    <input type="number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2">
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-400 mb-1">FT (Excl. FMLA)</label>
-                    <input type="number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2">
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-400 mb-1">Part Time</label>
-                    <input type="number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2">
-                </div>
-                <div class="flex flex-col">
-                    <label class="text-xs font-bold text-gray-400 mb-1">Travelers</label>
-                    <input type="number" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-2">
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <input type="text" name="reports_to" placeholder="Reporting Structure (Who does SPD report to?)" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="text" name="hours_of_op" placeholder="Hours of Operation" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="md:col-span-2">
-                    <label class="block mb-2 text-sm font-semibold text-gray-600">Hours of Operation</label>
-                    <input type="text" placeholder="e.g. 24/7 or 0600-2300" class="input-focus w-full rounded-xl border-2 border-gray-200 px-4 py-3">
-                </div>
-                <div>
-                    <label class="block mb-2 text-sm font-semibold text-gray-600">Operating Rooms</label>
-                    <input type="number" class="input-focus w-full rounded-xl border-2 border-gray-200 px-4 py-3">
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <input type="number" name="staff_ft_fmla" placeholder="FT (w/ FMLA)" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="number" name="staff_ft_no_fmla" placeholder="FT (w/out FMLA)" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="number" name="staff_pt" placeholder="Part Time" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="number" name="staff_travelers" placeholder="Travelers" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
             </div>
-
-            <div class="bg-purple-50/50 p-6 rounded-2xl border border-purple-100">
-                <h3 class="font-semibold text-purple-800 mb-4">Processing Capabilities</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <label class="flex items-center space-x-3 cursor-pointer group">
-                        <input type="checkbox" class="w-5 h-5 rounded text-purple-600 border-gray-300 focus:ring-purple-500">
-                        <span class="text-gray-700 group-hover:text-purple-700 transition">Endoscopes</span>
-                    </label>
-                    <label class="flex items-center space-x-3 cursor-pointer group">
-                        <input type="checkbox" class="w-5 h-5 rounded text-purple-600 border-gray-300 focus:ring-purple-500">
-                        <span class="text-gray-700 group-hover:text-purple-700 transition">Vascular/Open Heart</span>
-                    </label>
-                    <label class="flex items-center space-x-3 cursor-pointer group">
-                        <input type="checkbox" class="w-5 h-5 rounded text-purple-600 border-gray-300 focus:ring-purple-500">
-                        <span class="text-gray-700 group-hover:text-purple-700 transition">Arthroscopic</span>
-                    </label>
-                    <label class="flex items-center space-x-3 cursor-pointer group">
-                        <input type="checkbox" class="w-5 h-5 rounded text-purple-600 border-gray-300 focus:ring-purple-500">
-                        <span class="text-gray-700 group-hover:text-purple-700 transition">Robotic</span>
-                    </label>
-                    <label class="flex items-center space-x-3 cursor-pointer group">
-                        <input type="checkbox" class="w-5 h-5 rounded text-purple-600 border-gray-300 focus:ring-purple-500">
-                        <span class="text-gray-700 group-hover:text-purple-700 transition">TEE Probes</span>
-                    </label>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="number" name="num_or" placeholder="Number of ORs" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
+                <input type="text" name="tracking_system" placeholder="Electronic Tracking System Name" class="input-focus rounded-xl border-2 border-gray-200 px-4 py-3">
             </div>
         </section>
 
         <section>
             <div class="flex items-center mb-6 border-b-2 border-purple-200 pb-2">
-                <span class="text-2xl mr-3">🧠</span>
-                <h2 class="text-2xl font-bold text-gray-800">Insights & Pain Points</h2>
+                <span class="text-2xl mr-3">⚠️</span>
+                <h2 class="text-2xl font-bold text-gray-800">Insights</h2>
             </div>
             <div class="space-y-6">
-                <div class="flex flex-col">
-                    <label class="mb-2 text-sm font-semibold text-gray-600">Major Pain-Points (Current Challenges)</label>
-                    <textarea rows="4" placeholder="Describe staffing issues, equipment backlogs, etc..." class="input-focus rounded-2xl border-2 border-gray-200 px-4 py-3"></textarea>
-                </div>
-                <div class="flex flex-col">
-                    <label class="mb-2 text-sm font-semibold text-gray-600">Additional Information</label>
-                    <textarea rows="4" placeholder="Any other details you wish to share..." class="input-focus rounded-2xl border-2 border-gray-200 px-4 py-3"></textarea>
-                </div>
+                <textarea name="pain_points" rows="4" placeholder="Major pain-points or current challenges..." class="input-focus w-full rounded-2xl border-2 border-gray-200 px-4 py-3"></textarea>
+                <textarea name="other_info" rows="4" placeholder="Any other information you wish for me to know?" class="input-focus w-full rounded-2xl border-2 border-gray-200 px-4 py-3"></textarea>
             </div>
         </section>
 
-        <div class="pt-6">
-            <button type="submit" class="gradient-btn w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg flex items-center justify-center space-x-2">
-                <span>Submit Assessment</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
-        </div>
-
+        <button type="submit" class="gradient-btn w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg flex items-center justify-center space-x-2">
+            <span>Submit to Netlify</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
     </form>
 
     <footer class="mt-8 text-center text-gray-500 text-sm">
-        &copy; 2026 Sterile Processing Department Assessment Portal
+        Powered by Netlify Forms &bull; &copy; 2026
     </footer>
 </div>
+
+<script>
+</script>
 </body>
 </html>
