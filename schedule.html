@@ -372,9 +372,9 @@
     function auditForm() {
         return {
             activeSection: 'identity',
-            affiliated: 'n',
-            findings: 'n',
-            tracking: 'n',
+            affiliated: false,
+            findings: 'No Findings',
+            tracking: 'No Tracking',
             sections: {
                 'identity': 'Identity',
                 'compliance': 'Compliance',
@@ -403,12 +403,13 @@
                             text: 'The audit data has been securely recorded.',
                             icon: 'success',
                             confirmButtonColor: '#1e293b',
-                            confirmButtonText: 'Return to Dashboard'
+                            confirmButtonText: 'Return to the Main Page'
                         }).then(() => {
                             form.reset();
                             this.affiliated = 'n';
                             this.findings = 'n';
                             this.tracking = 'n';
+                            window.location.href = '/'
                         });
                     })
                     .catch((error) => {
