@@ -123,7 +123,11 @@
     </aside>
 
     <main class="flex-1 relative overflow-y-auto h-screen no-scrollbar scroll-smooth">
-        <form id="auditForm" @submit.prevent="submitForm" netlify class="max-w-4xl mx-auto p-6 md:p-16 lg:p-24 pb-48">
+        <form id="auditForm" name="facility-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" @submit.prevent="submitForm" class="max-w-4xl mx-auto p-6 md:p-16 lg:p-24 pb-48">
+            <input type="hidden" name="form-name" value="facility-audit">
+            <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
 
             <section id="identity" class="mb-24 scroll-mt-24" @mouseenter="activeSection = 'identity'">
                 <span class="text-crown-gold text-xs font-bold uppercase tracking-widest mb-3 block">Section 01</span>
@@ -384,18 +388,38 @@
                 return ((index + 1) / keys.length) * 100;
             },
             submitForm() {
-                const formData = new FormData(document.getElementById('auditForm'));
-                const data = Object.fromEntries(formData);
+                const form = document.getElementById('auditForm');
+                const formData = new FormData(form);
 
-                console.log('Form submitted:', data);
-
-                Swal.fire({
-                    title: 'Assessment Submitted',
-                    text: 'The audit data has been securely recorded.',
-                    icon: 'success',
-                    confirmButtonColor: '#1e293b',
-                    confirmButtonText: 'Return to Dashboard'
-                });
+                // Submit to Netlify
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                    .then(() => {
+                        Swal.fire({
+                            title: 'Assessment Submitted',
+                            text: 'The audit data has been securely recorded.',
+                            icon: 'success',
+                            confirmButtonColor: '#1e293b',
+                            confirmButtonText: 'Return to Dashboard'
+                        }).then(() => {
+                            form.reset();
+                            this.affiliated = 'n';
+                            this.findings = 'n';
+                            this.tracking = 'n';
+                        });
+                    })
+                    .catch((error) => {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'There was a problem submitting the form. Please try again.',
+                            icon: 'error',
+                            confirmButtonColor: '#1e293b'
+                        });
+                        console.error('Form submission error:', error);
+                    });
             }
         }
     }
