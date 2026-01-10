@@ -280,25 +280,25 @@
 
 <body class="bg-gradient-to-br from-gray-50 via-purple-50/30 to-pink-50/20">
 <!-- Decorative Background -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
     <div
-            class="absolute top-0 -left-4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+            class="absolute top-0 bg-purple-300 rounded-full -left-4 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
     ></div>
     <div
-            class="absolute top-0 -right-4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+            class="absolute top-0 bg-pink-300 rounded-full -right-4 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
     ></div>
     <div
-            class="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+            class="absolute bg-indigo-300 rounded-full -bottom-8 left-20 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
     ></div>
 </div>
 
 <div x-data="articleData()">
     <!-- Navigation -->
     <nav
-            class="fixed w-full bg-white/80 backdrop-blur-md shadow-lg z-50 border-b border-purple-100"
+            class="fixed z-50 w-full border-b border-purple-100 shadow-lg bg-white/80 backdrop-blur-md"
     >
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center space-x-3 group">
                     <img
                             src="assets/logo.svg"
@@ -307,14 +307,14 @@
                             onerror="this.style.display='none'"
                     />
                     <span
-                            class="text-2xl font-bold font-display bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 bg-clip-text text-transparent"
+                            class="text-2xl font-bold text-transparent font-display bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 bg-clip-text"
                     >
                 Crown Point
               </span>
                 </a>
                 <a
                         href="index.html#news"
-                        class="flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition-colors font-medium group"
+                        class="flex items-center font-medium text-gray-700 space-x-2 hover:text-purple-600 transition-colors group"
                 >
                     <svg
                             class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
@@ -336,48 +336,48 @@
     </nav>
 
     <!-- Loading State -->
-    <div x-show="loading" class="pt-32 pb-16 relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="skeleton h-12 w-3/4 mb-6 rounded-lg"></div>
-            <div class="skeleton h-6 w-48 mb-8 rounded-lg"></div>
-            <div class="skeleton h-96 w-full mb-8 rounded-2xl"></div>
+    <div x-show="loading" class="relative z-10 pt-32 pb-16">
+        <div class="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
+            <div class="w-3/4 h-12 mb-6 rounded-lg skeleton"></div>
+            <div class="w-48 h-6 mb-8 rounded-lg skeleton"></div>
+            <div class="w-full mb-8 skeleton h-96 rounded-2xl"></div>
             <div class="space-y-4">
-                <div class="skeleton h-5 w-full rounded"></div>
-                <div class="skeleton h-5 w-full rounded"></div>
-                <div class="skeleton h-5 w-5/6 rounded"></div>
-                <div class="skeleton h-5 w-full rounded"></div>
-                <div class="skeleton h-5 w-4/6 rounded"></div>
+                <div class="w-full h-5 rounded skeleton"></div>
+                <div class="w-full h-5 rounded skeleton"></div>
+                <div class="w-5/6 h-5 rounded skeleton"></div>
+                <div class="w-full h-5 rounded skeleton"></div>
+                <div class="w-4/6 h-5 rounded skeleton"></div>
             </div>
         </div>
     </div>
 
     <!-- Article Content -->
-    <article x-show="!loading && article" class="pt-32 pb-20 relative z-10">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article x-show="!loading && article" class="relative z-10 pt-32 pb-20">
+        <div class="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
             <!-- Article Header -->
             <header class="mb-12">
                 <div
-                        class="inline-flex items-center space-x-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full mb-6"
+                        class="inline-flex items-center px-4 py-2 mb-6 text-purple-700 bg-purple-100 rounded-full space-x-2"
                 >
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path
                                 d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
                         ></path>
                     </svg>
-                    <span class="text-sm font-bold uppercase tracking-wide"
+                    <span class="text-sm font-bold tracking-wide uppercase"
                     >Industry Update</span
                     >
                 </div>
 
                 <h1
-                        class="text-4xl sm:text-5xl lg:text-6xl font-bold font-display text-gray-900 mb-6 leading-tight"
+                        class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl font-display"
                         x-text="article.title"
                 ></h1>
 
-                <div class="flex flex-wrap items-center gap-6 text-gray-600">
+                <div class="flex flex-wrap items-center text-gray-600 gap-6">
                     <div class="flex items-center space-x-2">
                         <div
-                                class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center"
+                                class="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500"
                         >
                             <svg
                                     class="w-6 h-6 text-white"
@@ -400,14 +400,14 @@
 
             <!-- Featured Image -->
             <div x-show="article.image" class="mb-16 group">
-                <div class="relative overflow-hidden rounded-3xl shadow-2xl">
+                <div class="relative overflow-hidden shadow-2xl rounded-3xl">
                     <img
                             :src="article.image"
                             :alt="article.title"
                             class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700"
                     />
                     <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            class="absolute inset-0 opacity-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-100 transition-opacity duration-300"
                     ></div>
                 </div>
             </div>
@@ -415,13 +415,13 @@
             <!-- Article Summary -->
             <div class="relative mb-16">
                 <div
-                        class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"
+                        class="absolute top-0 bottom-0 w-1 rounded-full -left-4 bg-gradient-to-b from-purple-600 to-pink-600"
                 ></div>
                 <div
-                        class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 p-8 rounded-2xl"
+                        class="p-8 border border-purple-100 bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl"
                 >
                     <svg
-                            class="w-10 h-10 text-purple-600 mb-4"
+                            class="w-10 h-10 mb-4 text-purple-600"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                     >
@@ -432,7 +432,7 @@
                         />
                     </svg>
                     <p
-                            class="text-xl text-gray-700 leading-relaxed font-medium"
+                            class="text-xl font-medium leading-relaxed text-gray-700"
                             x-text="article.summary"
                     ></p>
                 </div>
@@ -441,33 +441,33 @@
             <!-- Article Body -->
             <div class="prose prose-lg max-w-none">
                 <div
-                        class="article-content bg-white/50 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-purple-100"
+                        class="p-8 border border-purple-100 shadow-xl article-content bg-white/50 backdrop-blur-sm rounded-3xl lg:p-12"
                         x-html="renderedContent"
                 ></div>
             </div>
 
             <!-- Tags Section -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="pt-8 mt-12 border-t border-gray-200">
                 <div class="flex flex-wrap gap-2">
               <span
-                      class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold"
+                      class="px-4 py-2 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full"
               >Sterile Processing</span
               >
                     <span
-                            class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold"
+                            class="px-4 py-2 text-sm font-semibold text-pink-700 bg-pink-100 rounded-full"
                     >Healthcare</span
                     >
                     <span
-                            class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-semibold"
+                            class="px-4 py-2 text-sm font-semibold text-indigo-700 bg-indigo-100 rounded-full"
                     >Compliance</span
                     >
                 </div>
             </div>
 
             <!-- Share Section -->
-            <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="pt-8 mt-12 border-t border-gray-200">
                 <h3
-                        class="text-2xl font-bold font-display text-gray-900 mb-6 flex items-center"
+                        class="flex items-center mb-6 text-2xl font-bold text-gray-900 font-display"
                 >
                     <svg
                             class="w-6 h-6 mr-3 text-purple-600"
@@ -487,7 +487,7 @@
                 <div class="flex flex-wrap gap-4">
                     <button
                             @click="shareArticle('twitter')"
-                            class="group flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            class="flex items-center px-6 py-3 text-white group space-x-3 bg-gradient-to-r from-blue-400 to-blue-500 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -499,7 +499,7 @@
 
                     <button
                             @click="shareArticle('facebook')"
-                            class="group flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            class="flex items-center px-6 py-3 text-white group space-x-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -511,7 +511,7 @@
 
                     <button
                             @click="shareArticle('linkedin')"
-                            class="group flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-blue-700 to-blue-800 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            class="flex items-center px-6 py-3 text-white group space-x-3 bg-gradient-to-r from-blue-700 to-blue-800 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -523,7 +523,7 @@
 
                     <button
                             @click="copyLink()"
-                            class="group flex items-center space-x-3 px-6 py-3 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            class="flex items-center px-6 py-3 text-white group space-x-3 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         <svg
                                 class="w-5 h-5"
@@ -547,7 +547,7 @@
             <div class="mt-16 text-center">
                 <a
                         href="index.html#news"
-                        class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-lg rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        class="inline-flex items-center px-8 py-4 text-lg font-bold text-white rounded-full space-x-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                     <svg
                             class="w-6 h-6"
@@ -569,10 +569,10 @@
     </article>
 
     <!-- Error State -->
-    <div x-show="!loading && !article" class="pt-32 pb-20 relative z-10">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div x-show="!loading && !article" class="relative z-10 pt-32 pb-20">
+        <div class="max-w-2xl px-4 mx-auto text-center sm:px-6 lg:px-8">
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-purple-100"
+                    class="p-12 border border-purple-100 shadow-2xl bg-white/80 backdrop-blur-sm rounded-3xl"
             >
                 <div
                         class="inline-flex items-center justify-center w-24 h-24 mb-6 rounded-full bg-gradient-to-br from-red-500 to-pink-500"
@@ -591,16 +591,16 @@
                         ></path>
                     </svg>
                 </div>
-                <h2 class="text-4xl font-bold font-display text-gray-900 mb-4">
+                <h2 class="mb-4 text-4xl font-bold text-gray-900 font-display">
                     Article Not Found
                 </h2>
-                <p class="text-xl text-gray-600 mb-8">
+                <p class="mb-8 text-xl text-gray-600">
                     The article you're looking for doesn't exist or may have been
                     removed.
                 </p>
                 <a
                         href="index.html#news"
-                        class="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300"
+                        class="inline-flex items-center px-8 py-4 font-bold text-white rounded-full space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-xl hover:scale-105 transition-all duration-300"
                 >
                     <svg
                             class="w-5 h-5"
@@ -623,11 +623,11 @@
 </div>
 
 <!-- Footer -->
-<footer class="relative z-10 bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-3 gap-8 mb-8">
+<footer class="relative z-10 py-12 text-white bg-gray-900">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-8 grid md:grid-cols-3 gap-8">
             <div>
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center mb-4 space-x-3">
                     <img
                             src="assets/logo.svg"
                             alt="Crown Point Logo"
@@ -640,7 +640,7 @@
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-4 font-display">Quick Links</h3>
+                <h3 class="mb-4 text-lg font-bold font-display">Quick Links</h3>
                 <ul class="space-y-2">
                     <li>
                         <a
@@ -667,12 +667,12 @@
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-4 font-display">Contact</h3>
+                <h3 class="mb-4 text-lg font-bold font-display">Contact</h3>
                 <ul class="space-y-3">
                     <li>
                         <a
                                 href="mailto:crownpointspd@gmail.com"
-                                class="text-gray-400 hover:text-purple-400 transition break-all"
+                                class="text-gray-400 break-all hover:text-purple-400 transition"
                         >crownpointspd@gmail.com</a
                         >
                     </li>
@@ -687,7 +687,7 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 pt-8 text-center">
+        <div class="pt-8 text-center border-t border-gray-800">
             <p class="text-gray-400">
                 &copy;
                 <span x-data x-text="new Date().getFullYear()">2025</span> Crown
@@ -704,11 +704,11 @@
         src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 ></script>
 
-<footer class="bg-black text-gray-400 py-6">
+<footer class="py-6 text-gray-400 bg-black">
     <a href="https://starlithlabs.com/">
-        <div class="container mx-auto px-4 text-center">
-            <p class="orbitron text-sm md:text-base">
-                Made with <span class="text-white">♥</span> by <span class="text-white font-semibold">Starlith</span>
+        <div class="container px-4 mx-auto text-center">
+            <p class="text-sm orbitron md:text-base">
+                Made with <span class="text-white">♥</span> by <span class="font-semibold text-white">Starlith</span>
             </p>
         </div>
     </a>

@@ -133,24 +133,24 @@
 
 <body class="bg-gradient-to-br from-gray-50 via-purple-50/30 to-pink-50/20">
 <!-- Decorative Background -->
-<div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
     <div
-            class="absolute top-0 -left-4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+            class="absolute top-0 bg-purple-300 rounded-full -left-4 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
     ></div>
     <div
-            class="absolute top-0 -right-4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
+            class="absolute top-0 bg-pink-300 rounded-full -right-4 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"
     ></div>
     <div
-            class="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
+            class="absolute bg-indigo-300 rounded-full -bottom-8 left-20 w-96 h-96 mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"
     ></div>
 </div>
 
 <!-- Navigation -->
 <nav
-        class="fixed w-full bg-white/80 backdrop-blur-md shadow-lg z-50 border-b border-purple-100"
+        class="fixed z-50 w-full border-b border-purple-100 shadow-lg bg-white/80 backdrop-blur-md"
 >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
             <a href="index.html" class="flex items-center space-x-3 group">
                 <img
                         src="assets/logo.svg"
@@ -160,7 +160,7 @@
                 />
                 <span class="text-2xl font-bold font-display">
               <span
-                      class="bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 bg-clip-text text-transparent"
+                      class="text-transparent bg-gradient-to-r from-purple-600 via-purple-500 to-pink-600 bg-clip-text"
               >
                 Crown Point
               </span>
@@ -169,7 +169,7 @@
             </a>
             <a
                     href="index.html"
-                    class="flex items-center space-x-2 text-gray-700 hover:text-purple-600 transition-colors font-medium group"
+                    class="flex items-center font-medium text-gray-700 space-x-2 hover:text-purple-600 transition-colors group"
             >
                 <svg
                         class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
@@ -191,19 +191,19 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="pt-32 pb-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="relative z-10 pt-32 pb-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="items-center grid lg:grid-cols-2 gap-12">
             <!-- Left: Image -->
             <div class="relative group">
                 <div
-                        class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000"
+                        class="absolute opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur group-hover:opacity-75 transition duration-1000"
                 ></div>
                 <div class="relative">
                     <img
                             src="assets/ceo.jpg"
                             alt="Malinda Elammari"
-                            class="relative rounded-3xl shadow-2xl w-full"
+                            class="relative w-full shadow-2xl rounded-3xl"
                     />
                 </div>
             </div>
@@ -212,27 +212,27 @@
             <div class="space-y-6">
                 <div class="inline-block">
               <span
-                      class="text-purple-600 font-bold text-sm uppercase tracking-wider bg-purple-50 px-4 py-2 rounded-full"
+                      class="px-4 py-2 text-sm font-bold tracking-wider text-purple-600 uppercase rounded-full bg-purple-50"
               >Founder & CEO</span
               >
                 </div>
                 <h1
-                        class="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight"
+                        class="text-5xl font-bold leading-tight md:text-6xl lg:text-7xl font-display"
                 >
                     Malinda
                     <span
-                            class="bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent animate-gradient-x block"
+                            class="block text-transparent bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text animate-gradient-x"
                     >Elammari</span
                     >
                 </h1>
-                <p class="text-2xl text-gray-600 leading-relaxed">
+                <p class="text-2xl leading-relaxed text-gray-600">
                     Sterile Processing Educator, Auditor & International Speaker
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <div class="flex flex-col pt-4 sm:flex-row gap-4">
                     <a
                             href="tel:919-522-2345"
-                            class="flex items-center justify-center space-x-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+                            class="flex items-center justify-center px-6 py-3 text-white space-x-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                         <svg
                                 class="w-5 h-5"
@@ -252,7 +252,7 @@
 
                     <a
                             href="mailto:crownpointspd@gmail.com"
-                            class="flex items-center justify-center space-x-3 px-6 py-3 bg-white border-2 border-purple-600 text-purple-600 rounded-xl hover:bg-purple-50 transition-all duration-300"
+                            class="flex items-center justify-center px-6 py-3 text-purple-600 bg-white border-2 border-purple-600 space-x-3 rounded-xl hover:bg-purple-50 transition-all duration-300"
                     >
                         <svg
                                 class="w-5 h-5"
@@ -276,12 +276,12 @@
 </section>
 
 <!-- Professional Profile -->
-<section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative z-10 py-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div
-                class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 lg:p-12 border border-purple-100"
+                class="p-8 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-3xl lg:p-12"
         >
-            <h2 class="text-4xl font-bold font-display mb-6 flex items-center">
+            <h2 class="flex items-center mb-6 text-4xl font-bold font-display">
                 <svg
                         class="w-10 h-10 mr-4 text-purple-600"
                         fill="none"
@@ -297,7 +297,7 @@
                 </svg>
                 Professional Profile
             </h2>
-            <p class="text-xl text-gray-700 leading-relaxed">
+            <p class="text-xl leading-relaxed text-gray-700">
                 Dedicated processing professional with over
                 <span class="font-bold text-purple-600"
                 >24 years of experience</span
@@ -311,13 +311,13 @@
 </section>
 
 <!-- Certifications -->
-<section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+<section class="relative z-10 py-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h2 class="mb-4 text-4xl font-bold md:text-5xl font-display">
                 Professional
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >Certifications</span
                 >
             </h2>
@@ -335,17 +335,17 @@
 
 <!-- AAMI Committee Section -->
 <section
-        class="py-16 relative z-10 bg-gradient-to-b from-transparent via-purple-50/50 to-transparent"
+        class="relative z-10 py-16 bg-gradient-to-b from-transparent via-purple-50/50 to-transparent"
 >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
             <h2
-                    class="text-4xl md:text-5xl font-bold font-display mb-4 text-center"
+                    class="mb-4 text-4xl font-bold text-center md:text-5xl font-display"
             >
                 <a
                         href="https://www.aami.org"
                         target="_blank"
-                        class="relative inline-flex items-center group text-gray-900 hover:text-purple-600 transition-colors"
+                        class="relative inline-flex items-center text-gray-900 group hover:text-purple-600 transition-colors"
                 >
                     AAMI
                     <!-- SVG icon -->
@@ -368,7 +368,7 @@
                     ></span>
                 </a>
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >
               Committee Leadership
             </span>
@@ -380,14 +380,14 @@
         </div>
 
         <div
-                class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 lg:p-12 border border-purple-100"
+                class="p-8 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-3xl lg:p-12"
         >
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div
-                        class="flex items-center space-x-3 p-4 bg-purple-50 rounded-xl"
+                        class="flex items-center p-4 space-x-3 bg-purple-50 rounded-xl"
                 >
                     <div
-                            class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-purple-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -405,9 +405,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -426,9 +426,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -447,9 +447,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -468,9 +468,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -490,10 +490,10 @@
                 </div>
 
                 <div
-                        class="flex items-center space-x-3 p-4 bg-purple-50 rounded-xl"
+                        class="flex items-center p-4 space-x-3 bg-purple-50 rounded-xl"
                 >
                     <div
-                            class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-purple-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -511,9 +511,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -532,9 +532,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -553,9 +553,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -574,9 +574,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -595,9 +595,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -616,9 +616,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -637,9 +637,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -658,9 +658,9 @@
                     >
                 </div>
 
-                <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl">
+                <div class="flex items-center p-4 space-x-3 bg-gray-50 rounded-xl">
                     <div
-                            class="w-8 h-8 bg-gray-600 rounded-lg flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-8 h-8 bg-gray-600 rounded-lg"
                     >
                         <svg
                                 class="w-5 h-5 text-white"
@@ -684,13 +684,13 @@
 </section>
 
 <!-- Awards & Recognition -->
-<section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+<section class="relative z-10 py-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h2 class="mb-4 text-4xl font-bold md:text-5xl font-display">
                 Awards &
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >Recognition</span
                 >
             </h2>
@@ -698,10 +698,10 @@
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
-                    class="bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-yellow-500"
@@ -713,17 +713,17 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">
+                <h3 class="mb-2 text-lg font-bold text-white">
                     Outstanding Leadership
                 </h3>
-                <p class="text-yellow-100 text-sm">Central Services 2019</p>
+                <p class="text-sm text-yellow-100">Central Services 2019</p>
             </div>
 
             <div
-                    class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-purple-500"
@@ -735,17 +735,17 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">
+                <h3 class="mb-2 text-lg font-bold text-white">
                     Superstar in Sterile Awareness
                 </h3>
-                <p class="text-purple-100 text-sm">2023</p>
+                <p class="text-sm text-purple-100">2023</p>
             </div>
 
             <div
-                    class="bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-pink-500"
@@ -757,17 +757,17 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">
+                <h3 class="mb-2 text-lg font-bold text-white">
                     Kilmer Conference Contributor
                 </h3>
-                <p class="text-pink-100 text-sm">2023</p>
+                <p class="text-sm text-pink-100">2023</p>
             </div>
 
             <div
-                    class="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-indigo-500"
@@ -779,15 +779,15 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">Best Nursing Team</h3>
-                <p class="text-indigo-100 text-sm">2004</p>
+                <h3 class="mb-2 text-lg font-bold text-white">Best Nursing Team</h3>
+                <p class="text-sm text-indigo-100">2004</p>
             </div>
 
             <div
-                    class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-blue-500"
@@ -799,16 +799,16 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">
+                <h3 class="mb-2 text-lg font-bold text-white">
                     HSPA Small Chapter of The Year
                 </h3>
-                <p class="text-blue-100 text-sm">2025</p>
+                <p class="text-sm text-blue-100">2025</p>
             </div>
             <div
-                    class="bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl shadow-xl p-6 text-center transform hover:scale-105 transition-transform"
+                    class="p-6 text-center shadow-xl bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl transform hover:scale-105 transition-transform"
             >
                 <div
-                        class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4"
+                        class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white rounded-full"
                 >
                     <svg
                             class="w-10 h-10 text-blue-500"
@@ -820,10 +820,10 @@
                         />
                     </svg>
                 </div>
-                <h3 class="text-white font-bold text-lg mb-2">
+                <h3 class="mb-2 text-lg font-bold text-white">
                     SPD International Ambassador Award
                 </h3>
-                <p class="text-blue-100 text-sm">2025</p>
+                <p class="text-sm text-blue-100">2025</p>
             </div>
         </div>
     </div>
@@ -831,14 +831,14 @@
 
 <!-- Professional Accomplishments -->
 <section
-        class="py-16 relative z-10 bg-gradient-to-b from-transparent via-purple-50/50 to-transparent"
+        class="relative z-10 py-16 bg-gradient-to-b from-transparent via-purple-50/50 to-transparent"
 >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h2 class="mb-4 text-4xl font-bold md:text-5xl font-display">
                 Professional
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >Accomplishments</span
                 >
             </h2>
@@ -847,15 +847,15 @@
         <div class="grid md:grid-cols-2 gap-6">
             <!-- 2018 AAMI KiiP Project Manager -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl"
                     >
                         <!-- Project/Presentation Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -863,7 +863,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             AAMI KiiP – Project Manager for Aseptic Presentation
                         </h3>
                         <p class="text-gray-600">2018 – Present</p>
@@ -873,15 +873,15 @@
 
             <!-- 2019 AAMI BI&T Editorial Board -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl"
                     >
                         <!-- Book/Editorial Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -891,7 +891,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             AAMI BI&T Editorial Board Member
                         </h3>
                         <p class="text-gray-600">2019 – Present</p>
@@ -901,15 +901,15 @@
 
             <!-- 2021 President NC HSPA Chapter -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl"
                     >
                         <!-- Leadership Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -919,7 +919,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             President – NC HSPA Chapter
                         </h3>
                         <p class="text-gray-600">2021 – Present</p>
@@ -929,15 +929,15 @@
 
             <!-- 2021 Subject Matter Expert HSPA -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl"
                     >
                         <!-- Expertise/Certificate Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -947,7 +947,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             Subject Matter Expert – HSPA
                         </h3>
                         <p class="text-gray-600">2021 – Present</p>
@@ -957,15 +957,15 @@
 
             <!-- 2023 Founder of Crownie Certification -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl"
                     >
                         <!-- Startup / Innovation Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -973,7 +973,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             Founder of Crownie Certification Movement
                         </h3>
                         <p class="text-gray-600">2023 – Present</p>
@@ -983,15 +983,15 @@
 
             <!-- 2024 US Representative ISO -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl"
                     >
                         <!-- Globe / International Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -1001,7 +1001,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             US Representative – ISO
                         </h3>
                         <p class="text-gray-600">
@@ -1013,15 +1013,15 @@
 
             <!-- 2024 AAMI KiiP Executive Committee -->
             <div
-                    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-shadow"
+                    class="p-6 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl hover:shadow-2xl transition-shadow"
             >
                 <div class="flex items-start space-x-4">
                     <div
-                            class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0"
+                            class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl"
                     >
                         <!-- Committee / Team Icon -->
                         <svg
-                                class="w-7 h-7 text-white"
+                                class="text-white w-7 h-7"
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                         >
@@ -1031,7 +1031,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900 mb-2">
+                        <h3 class="mb-2 font-bold text-gray-900">
                             AAMI KiiP Executive Committee Member
                         </h3>
                         <p class="text-gray-600">
@@ -1045,13 +1045,13 @@
 </section>
 
 <!-- International Speaking -->
-<section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+<section class="relative z-10 py-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h2 class="mb-4 text-4xl font-bold md:text-5xl font-display">
                 International
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >
               Speaker
             </span>
@@ -1064,13 +1064,13 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             <!-- Egypt -->
             <div
-                    class="group relative rounded-3xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
+                    class="relative overflow-hidden shadow-xl group rounded-3xl transform hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
             >
                 <div class="absolute inset-0">
                     <img
                             src="https://flagcdn.com/w640/eg.png"
                             alt="Egypt Flag"
-                            class="w-full h-full object-cover"
+                            class="object-cover w-full h-full"
                     />
                     <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-purple-900/90 group-hover:via-purple-800/70 transition-all duration-500"
@@ -1079,10 +1079,10 @@
                 <div
                         class="relative z-10 p-8 h-full flex flex-col justify-end min-h-[280px]"
                 >
-                    <h3 class="font-bold text-2xl mb-2 text-white font-display">
+                    <h3 class="mb-2 text-2xl font-bold text-white font-display">
                         Egypt
                     </h3>
-                    <p class="text-white/90 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed text-white/90">
                         Modern Technology & Information University
                     </p>
                 </div>
@@ -1090,13 +1090,13 @@
 
             <!-- Philippines -->
             <div
-                    class="group relative rounded-3xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
+                    class="relative overflow-hidden shadow-xl group rounded-3xl transform hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
             >
                 <div class="absolute inset-0">
                     <img
                             src="https://flagcdn.com/w640/ph.png"
                             alt="Philippines Flag"
-                            class="w-full h-full object-cover"
+                            class="object-cover w-full h-full"
                     />
                     <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-pink-900/90 group-hover:via-pink-800/70 transition-all duration-500"
@@ -1105,10 +1105,10 @@
                 <div
                         class="relative z-10 p-8 h-full flex flex-col justify-end min-h-[280px]"
                 >
-                    <h3 class="font-bold text-2xl mb-2 text-white font-display">
+                    <h3 class="mb-2 text-2xl font-bold text-white font-display">
                         Philippines
                     </h3>
-                    <p class="text-white/90 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed text-white/90">
                         FISPM - HSPA Chapter
                     </p>
                 </div>
@@ -1116,13 +1116,13 @@
 
             <!-- Pakistan -->
             <div
-                    class="group relative rounded-3xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
+                    class="relative overflow-hidden shadow-xl group rounded-3xl transform hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
             >
                 <div class="absolute inset-0">
                     <img
                             src="https://flagcdn.com/w640/pk.png"
                             alt="Pakistan Flag"
-                            class="w-full h-full object-cover"
+                            class="object-cover w-full h-full"
                     />
                     <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-green-900/90 group-hover:via-green-800/70 transition-all duration-500"
@@ -1131,10 +1131,10 @@
                 <div
                         class="relative z-10 p-8 h-full flex flex-col justify-end min-h-[280px]"
                 >
-                    <h3 class="font-bold text-2xl mb-2 text-white font-display">
+                    <h3 class="mb-2 text-2xl font-bold text-white font-display">
                         Pakistan
                     </h3>
-                    <p class="text-white/90 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed text-white/90">
                         Tabba Heart Institute
                     </p>
                 </div>
@@ -1142,13 +1142,13 @@
 
             <!-- Greece -->
             <div
-                    class="group relative rounded-3xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
+                    class="relative overflow-hidden shadow-xl group rounded-3xl transform hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
             >
                 <div class="absolute inset-0">
                     <img
                             src="https://flagcdn.com/w640/gr.png"
                             alt="Greece Flag"
-                            class="w-full h-full object-cover"
+                            class="object-cover w-full h-full"
                     />
                     <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-blue-900/90 group-hover:via-blue-800/70 transition-all duration-500"
@@ -1157,10 +1157,10 @@
                 <div
                         class="relative z-10 p-8 h-full flex flex-col justify-end min-h-[280px]"
                 >
-                    <h3 class="font-bold text-2xl mb-2 text-white font-display">
+                    <h3 class="mb-2 text-2xl font-bold text-white font-display">
                         Greece
                     </h3>
-                    <p class="text-white/90 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed text-white/90">
                         Kilmer Conference
                     </p>
                 </div>
@@ -1168,13 +1168,13 @@
 
             <!-- UAE -->
             <div
-                    class="group relative rounded-3xl overflow-hidden transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
+                    class="relative overflow-hidden shadow-xl group rounded-3xl transform hover:-translate-y-2 transition-all duration-500 hover:shadow-2xl"
             >
                 <div class="absolute inset-0">
                     <img
                             src="https://flagcdn.com/w640/ae.png"
                             alt="UAE Flag"
-                            class="w-full h-full object-cover"
+                            class="object-cover w-full h-full"
                     />
                     <div
                             class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 group-hover:from-indigo-900/90 group-hover:via-indigo-800/70 transition-all duration-500"
@@ -1183,10 +1183,10 @@
                 <div
                         class="relative z-10 p-8 h-full flex flex-col justify-end min-h-[280px]"
                 >
-                    <h3 class="font-bold text-2xl mb-2 text-white font-display">
+                    <h3 class="mb-2 text-2xl font-bold text-white font-display">
                         UAE
                     </h3>
-                    <p class="text-white/90 text-sm leading-relaxed">
+                    <p class="text-sm leading-relaxed text-white/90">
                         Multiple Presentations
                     </p>
                 </div>
@@ -1199,13 +1199,13 @@
 <!-- Presentations Section -->
 <!-- Presentations Section -->
 <!-- Presentations Section -->
-<section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold font-display mb-4">
+<section class="relative z-10 py-16">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+            <h2 class="mb-4 text-4xl font-bold md:text-5xl font-display">
                 Professional
                 <span
-                        class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
+                        class="text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text"
                 >Presentations</span
                 >
             </h2>
@@ -1221,10 +1221,10 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 relative z-10">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative z-10 py-20">
+    <div class="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
         <div
-                class="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 rounded-3xl shadow-2xl p-12 text-center relative overflow-hidden"
+                class="relative p-12 overflow-hidden text-center shadow-2xl bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 rounded-3xl"
         >
             <div class="absolute inset-0 opacity-10">
                 <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -1249,17 +1249,17 @@
 
             <div class="relative z-10">
                 <h2
-                        class="text-4xl md:text-5xl font-bold font-display text-white mb-6"
+                        class="mb-6 text-4xl font-bold text-white md:text-5xl font-display"
                 >
                     Ready to Elevate Your Standards?
                 </h2>
-                <p class="text-xl text-purple-100 mb-8">
+                <p class="mb-8 text-xl text-purple-100">
                     Work with an industry-leading expert in processing
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-col justify-center sm:flex-row gap-4">
                     <a
                             href="tel:919-522-2345"
-                            class="inline-flex items-center justify-center space-x-3 px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl"
+                            class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-purple-600 bg-white rounded-full shadow-xl space-x-3 hover:scale-105 transition-all duration-300"
                     >
                         <svg
                                 class="w-6 h-6"
@@ -1279,7 +1279,7 @@
 
                     <a
                             href="mailto:malinda.elammari@gmail.com"
-                            class="inline-flex items-center justify-center space-x-3 px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300"
+                            class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white rounded-full space-x-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300"
                     >
                         <svg
                                 class="w-6 h-6"
@@ -1303,11 +1303,11 @@
 </section>
 
 <!-- Footer -->
-<footer class="relative z-10 bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-3 gap-8 mb-8">
+<footer class="relative z-10 py-12 text-white bg-gray-900">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mb-8 grid md:grid-cols-3 gap-8">
             <div>
-                <div class="flex items-center space-x-3 mb-4">
+                <div class="flex items-center mb-4 space-x-3">
                     <img
                             src="assets/logo.svg"
                             alt="Crown Point Logo"
@@ -1320,7 +1320,7 @@
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-4 font-display">Quick Links</h3>
+                <h3 class="mb-4 text-lg font-bold font-display">Quick Links</h3>
                 <ul class="space-y-2">
                     <li>
                         <a
@@ -1347,12 +1347,12 @@
             </div>
 
             <div>
-                <h3 class="font-bold text-lg mb-4 font-display">Contact</h3>
+                <h3 class="mb-4 text-lg font-bold font-display">Contact</h3>
                 <ul class="space-y-3">
                     <li>
                         <a
                                 href="mailto:m.e@crownpointconsult.com"
-                                class="text-gray-400 hover:text-purple-400 transition break-all"
+                                class="text-gray-400 break-all hover:text-purple-400 transition"
                         >m.e@crownpointconsult.com</a
                         >
                     </li>
@@ -1367,7 +1367,7 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 pt-8 text-center">
+        <div class="pt-8 text-center border-t border-gray-800">
             <p class="text-gray-400">
                 &copy;
                 <span x-data x-text="new Date().getFullYear()">2025</span> Crown
@@ -1449,7 +1449,7 @@
           </svg>
         </div>
         <div>
-          <h3 class="font-bold text-gray-900 mb-1">${cert.code}</h3>
+          <h3 class="mb-1 font-bold text-gray-900">${cert.code}</h3>
           <p class="text-sm text-gray-600">${cert.name}</p>
         </div>
       </div>
@@ -1482,18 +1482,18 @@ const pres_grid = document.getElementById("presentations-grid");
 
 presentations.forEach((pres) => {
     const card = document.createElement("div");
-    card.className = "bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition-shadow"
+    card.className = "p-4 text-center bg-white shadow-md rounded-xl hover:shadow-lg transition-shadow"
     card.innerHTML = `
-    <h3 class="font-bold text-gray-900 text-sm mb-1">${pres.name}</h3> <p class="text-xs text-purple-600 font-semibold">${pres.years}</p>`
+    <h3 class="mb-1 text-sm font-bold text-gray-900">${pres.name}</h3> <p class="text-xs font-semibold text-purple-600">${pres.years}</p>`
     pres_grid.appendChild(card);
 })
 
 </script>
-<footer class="bg-black text-gray-400 py-6">
+<footer class="py-6 text-gray-400 bg-black">
     <a href="https://starlithlabs.com/">
-        <div class="container mx-auto px-4 text-center">
-            <p class="orbitron text-sm md:text-base">
-                Made with <span class="text-white">♥</span> by <span class="text-white font-semibold">Starlith</span>
+        <div class="container px-4 mx-auto text-center">
+            <p class="text-sm orbitron md:text-base">
+                Made with <span class="text-white">♥</span> by <span class="font-semibold text-white">Starlith</span>
             </p>
         </div>
     </a>

@@ -243,7 +243,7 @@ window.articleData = function () {
       // Create notification element
       const notification = document.createElement("div");
       notification.className =
-        "fixed bottom-8 right-8 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300";
+        "fixed z-50 px-6 py-3 text-white bg-green-500 rounded-lg shadow-lg bottom-8 right-8 transform transition-all duration-300";
       notification.innerHTML = `
         <div class="flex items-center space-x-2">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Create progress bar
   const progressBar = document.createElement("div");
   progressBar.className =
-    "fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-600 to-pink-600 z-50 transition-all duration-150";
+    "fixed top-0 left-0 z-50 h-1 bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-150";
   progressBar.style.width = "0%";
   document.body.appendChild(progressBar);
 
